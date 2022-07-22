@@ -13,7 +13,6 @@ const Item = {
 
   add(item) {
     Item.all.push(item)
-    console.log(Item.all)
 
     App.reload()
   },
@@ -27,8 +26,8 @@ const Item = {
 const DOM = {
   itemsContainer: document.querySelector('#list'),
   addItem(item, index) {
-    console.log(item)
     const li = document.createElement('li')
+    li.setAttribute('draggable', 'true')
     li.innerHTML = DOM.innerHTMLItem(item, index)
     li.dataset.index = index
 
@@ -36,11 +35,12 @@ const DOM = {
   },
 
   innerHTMLItem(item, index) {
-    const html = `
-    <label class="check"> <input type="checkbox" /> <span></span></label>${item.name}<i onclick="Item.remove(${index})" class="fa">&#xf014;</i>
+    const html = ` 
+    <label class="check"> <input type="checkbox" /> <span></span></label>${item.name}<i onclick="Item.remove(${index})" class="fa" >&#xf014;</i>
     `
     return html
   },
+
   clearItems() {
     DOM.itemsContainer.innerHTML = ''
   }
@@ -95,5 +95,4 @@ const App = {
     App.init()
   }
 }
-
 App.init()

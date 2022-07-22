@@ -32,8 +32,8 @@
   border-width: 0;
 }
 
-:root {
-  font-size: 62.5%;
+html {
+  font-size: 93.75%;
 }
 
 body {
@@ -216,8 +216,11 @@ header h1 {
 
 /*Responsive============*/
 @media (max-width: 800px) {
+  html {
+    font-size: 60%;
+  }
   .inputItem input {
-    width: 90%;
+    width: 100%;
   }
   #list {
     display: flex;
@@ -228,6 +231,14 @@ header h1 {
     padding: 3rem;
   }
   .inputItem button {
-    width: 90%;
+    width: 100%;
+  }
+
+  .card {
+    padding: 0.8rem;
+  }
+  .card .items {
+    padding: 0.7rem;
+    width: 100%;
   }
 }
