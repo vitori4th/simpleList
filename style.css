@@ -1,0 +1,233 @@
+/*Global============*/
+:root {
+  --light-yellow: #fbd160;
+  --yellow: #fad02c;
+  --green: #7d9851;
+  --red: #e92929;
+  --bg-green: #738d48;
+  --text-green: #5b7431;
+  --bg-card: #fff8e0;
+}
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+
+  font-family: 'Open Sans', sans-serif;
+}
+
+.sr-only {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  padding: 0;
+  margin: -1px;
+
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--bg-green);
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  width: 100vw;
+
+  padding-top: 3rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+header h1 {
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+
+  align-self: center;
+
+  padding-block: 1rem;
+  padding-inline: 3rem;
+}
+
+header h1 {
+  font-size: 2.6rem;
+}
+
+.card {
+  background-color: var(--bg-card);
+
+  width: max(75%, 320px);
+  max-width: 800px;
+
+  margin-inline: auto;
+  padding: 3.5rem;
+
+  border-radius: 1.5rem;
+  border: 1px solid var(--light-yellow);
+}
+
+.card .items {
+  width: max(90%, 220px);
+
+  text-decoration: none;
+
+  background-color: var(--bg-green);
+
+  border-radius: 1.5rem;
+
+  padding: 2rem;
+  margin-inline: auto;
+}
+
+#list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.card .items h3 {
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  font-size: 1.7rem;
+  text-align: center;
+  font-size: 1.7rem;
+
+  margin-bottom: 1rem;
+}
+
+.items ul li {
+  font-size: 1.5rem;
+  color: white;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-block: 1rem;
+  padding-inline: 1rem;
+
+  background-color: var(--green);
+}
+
+.items ul li i {
+  font-size: 24px;
+
+  cursor: pointer;
+}
+
+.items ul li input {
+  margin-right: 1rem;
+
+  min-width: 1.8rem;
+  min-height: 1.8rem;
+}
+
+.check input {
+  display: none;
+}
+
+.check span {
+  width: 15px;
+  height: 15px;
+
+  display: block;
+
+  background-color: white;
+
+  cursor: pointer;
+}
+
+.check input:checked + span::before {
+  content: '';
+
+  display: block;
+
+  width: 15px;
+  height: 15px;
+
+  background: url(./assets/check.png) center/cover;
+}
+
+.items .inputItem {
+  height: 4rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  margin-bottom: 1rem;
+}
+
+.inputItem input {
+  width: 200px;
+  height: 3.7rem;
+
+  border: none;
+  border-radius: 0.6rem;
+
+  padding: 0.6rem;
+}
+
+.inputItem input:focus {
+  box-shadow: 0 0 0 0;
+  outline: 0;
+}
+
+.items button {
+  height: 3.7rem;
+
+  color: var(--text-green);
+  font-weight: bold;
+
+  padding: 0.7rem 1.4rem;
+
+  border: none;
+  border-radius: 0.6rem;
+
+  transition: opacity 200ms;
+
+  cursor: pointer;
+
+  background-color: var(--yellow);
+  opacity: 0.7;
+}
+
+.items button:hover {
+  opacity: 1;
+}
+
+/*Responsive============*/
+@media (max-width: 800px) {
+  .inputItem input {
+    width: 90%;
+  }
+  #list {
+    display: flex;
+    flex-direction: column;
+  }
+  .inputItem {
+    flex-direction: column;
+    padding: 3rem;
+  }
+  .inputItem button {
+    width: 90%;
+  }
+}

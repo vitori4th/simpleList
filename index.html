@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista Supermercado</title>
+
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Lista Supermercado</h1>
+    </header>
+
+    <section class="card">
+      <div class="items">
+        <h3>Semana</h3>
+        <form class="inputItem" onsubmit="Form.submit(event)">
+          <label for="item" class="sr-only">Item</label>
+          <input type="text" id="item" name="item" placeholder="Banana" />
+          <button>Adicionar Item</button>
+        </form>
+        <ul id="list"></ul>
+      </div>
+    </section>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
