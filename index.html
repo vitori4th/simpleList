@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,29 +13,39 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
   </head>
   <body>
-    <header>
-      <h1>Lista Supermercado</h1>
-    </header>
+    <main>
+      <section>
+        <header>
+          <strong>Lista de compras</strong>
+          <p>Escreva os itens que você deseja comprar!</p>
+        </header>
 
-    <section class="card">
-      <div class="items">
-        <h3>Semana</h3>
-        <form class="inputItem" onsubmit="Form.submit(event)">
-          <label for="item" class="sr-only">Item</label>
-          <input type="text" id="item" name="item" placeholder="Banana" />
-          <button>Adicionar Item</button>
+        <form onsubmit="Form.submit(event)">
+          <label for="item">Item:</label>
+          <input
+            type="text"
+            id="item"
+            name="item"
+            placeholder="Digite um item"
+          />
+
+          <button type="submit">Adicionar</button>
         </form>
-        <ul id="list">
-          
-        </ul>
-      </div>
-    </section>
+
+        <div class="list-container">
+          <strong>Itens já cadastrados:</strong>
+
+          <ul id="list"></ul>
+        </div>
+      </section>
+    </main>
 
     <script src="./main.js"></script>
   </body>

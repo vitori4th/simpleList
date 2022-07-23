@@ -27,16 +27,20 @@ const DOM = {
   itemsContainer: document.querySelector('#list'),
   addItem(item, index) {
     const li = document.createElement('li')
-    li.setAttribute('draggable', 'true')
     li.innerHTML = DOM.innerHTMLItem(item, index)
     li.dataset.index = index
+    li.classList.add('list-item')
 
     DOM.itemsContainer.appendChild(li)
   },
 
   innerHTMLItem(item, index) {
     const html = ` 
-    <label class="check"> <input type="checkbox" /> <span></span></label>${item.name}<i onclick="Item.remove(${index})" class="fa" >&#xf014;</i>
+    <span>
+      <input type="checkbox"/>${item.name}
+    </span>
+    
+    <i onclick="Item.remove(${index})" class="fa" title="Excluir item da lista">&#xf014;</i>
     `
     return html
   },
@@ -58,7 +62,9 @@ const Form = {
     const name = Form.getValue().name
 
     if (name.trim() === '') {
-      throw new Error('Por favor, digite um item para inserir')
+      Form.name.focus()
+
+      throw new Error('Por favor, preencha o campo vazio!')
     }
   },
 
@@ -74,7 +80,8 @@ const Form = {
     event.preventDefault()
     try {
       Form.validateField()
-      Form.saveItem(Form.getValue())
+      const item = Form.getValue()
+      Form.saveItem(item)
       Form.clearField()
     } catch (error) {
       alert(error.message)
@@ -86,13 +93,14 @@ const App = {
   init() {
     Item.all.forEach((item, index) => {
       DOM.addItem(item, index)
-
-      Storage.set(Item.all)
     })
+    Storage.set(Item.all)
   },
+
   reload() {
     DOM.clearItems()
     App.init()
   }
 }
+
 App.init()
